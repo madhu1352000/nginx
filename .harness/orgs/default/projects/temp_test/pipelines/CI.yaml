@@ -55,3 +55,12 @@ pipeline:
                       #cp /usr/local/nginx/sbin/nginx /harness
 
                       cp -r /usr/local/nginx /harness/
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: docker
+                    repo: https://hub.docker.com/u/madhus13
+                    tags:
+                      - 0.0.1
