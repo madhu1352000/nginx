@@ -64,6 +64,7 @@ pipeline:
                     repo: madhus13/cirepo/
                     tags:
                       - 0.0.1
+                    dockerfile: Dockerfile
     - stage:
         name: test
         identifier: test
