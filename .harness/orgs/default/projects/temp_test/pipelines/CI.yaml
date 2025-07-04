@@ -51,9 +51,10 @@ pipeline:
                       auto/configure
                       make
                       sudo make install
+                      sudo /usr/local/nginx/sbin/nginx
+                      curl localhost
 
                       #cp /usr/local/nginx/sbin/nginx /harness
-
                       cp -r /usr/local/nginx /harness/
               - step:
                   type: BuildAndPushDockerRegistry
