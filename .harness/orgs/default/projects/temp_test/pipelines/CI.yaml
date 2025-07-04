@@ -92,3 +92,15 @@ pipeline:
                     connectorRef: docker
                     image: /imagecreated
                     shell: Sh
+              - step:
+                  type: Run
+                  name: check server reachability
+                  identifier: check_server_reachability
+                  spec:
+                    connectorRef: docker
+                    image: //imgae
+                    shell: Sh
+                    command: |-
+                      #update command
+                      sleep 20
+                      curl Background_1
