@@ -64,7 +64,6 @@ pipeline:
                     repo: https://hub.docker.com/repository/docker/madhus13/cirepo/general
                     tags:
                       - 0.0.1
-                    dockerfile: Docker
     - stage:
         name: test
         identifier: test
