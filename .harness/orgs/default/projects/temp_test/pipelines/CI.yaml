@@ -1,0 +1,57 @@
+pipeline:
+  name: CI
+  identifier: CI
+  projectIdentifier: temp_test
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: gitconnecttmp
+        build: <+input>
+  stages:
+    - stage:
+        name: CI
+        identifier: CI
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          buildIntelligence:
+            enabled: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: |-
+                      sudo apt -y update
+                      sudo apt -y install gcc make
+                      sudo apt -y install libpcre3-dev zlib1g-dev
+                      sudo apt -y install libssl-dev
+              - step:
+                  type: Run
+                  name: Run_2
+                  identifier: Run_2
+                  spec:
+                    shell: Sh
+                    command: |-
+                      auto/configure
+                      make
+                      sudo make install
+
+                      #cp /usr/local/nginx/sbin/nginx /harness
+
+                      cp -r /usr/local/nginx /harness/
