@@ -61,7 +61,7 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: docker
-                    repo: https://hub.docker.com/repository/docker/madhus13/cirepo/general
+                    repo: madhus13/cirepo/
                     tags:
                       - 0.0.1
     - stage:
