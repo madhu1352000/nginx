@@ -18,8 +18,9 @@ pipeline:
         spec:
           cloneCodebase: true
           caching:
-            enabled: true
+            enabled: false
             override: true
+            paths: []
           buildIntelligence:
             enabled: true
           platform:
@@ -62,7 +63,7 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: docker
-                    repo: madhus13/cirepo/
+                    repo: madhus13/docker_image
                     tags:
                       - 0.0.1
                     dockerfile: Dockerfile
